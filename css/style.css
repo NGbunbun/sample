@@ -644,7 +644,7 @@ img {
     }
     /* メインビジュアル */
     .mv{
-        height: 700px;
+        height: 710px;
         padding-top: 250px;
         padding-left: 140px;
     }
@@ -671,7 +671,7 @@ img {
         margin-top: -35px;
     }
     .intro-title{
-        font-size: 7rem;
+        font-size: 5.5rem;
         line-height: 1;
         letter-spacing: 1.5px;
     }
@@ -714,13 +714,14 @@ img {
         left: 20px;
     }
     .about-title{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .about-subtitle{
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
     .about-text{
         line-height: 1.7;
+        font-size: 0.75rem;
     }
     .about-btn{
         margin-top: 10px;
