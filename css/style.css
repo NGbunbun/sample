@@ -1,0 +1,806 @@
+@charset "UTF-8";
+
+/* SP版スタイルを記述 
+---------------------------------------------------------------*/
+/* -------------------- 共通部分 -------------------- */
+body{
+    font-family: "Josefin Sans", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+    font-feature-settings: "palt";
+}
+a{
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+.section{
+    padding: 20px 0;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+/* --------------------TOP PAGE-------------------- */
+/* ヘッダー */
+.header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 65px;
+    align-items: center;
+    padding: 0 20px;
+    transition: .3s;
+}
+.header-right{
+    display: none;
+}
+.header.header-active{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0,0.05);
+}
+.header-active .header-right{
+    display: block;
+}
+.header-btn{
+    padding: 12px 20px;
+}
+.btn{
+    background-color: #eb51c2;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+/* メインビジュアル */
+.mv{
+    position: relative;
+    height: 410px;
+    padding-top: 150px;
+    padding-left: 20px;
+    margin: 0 auto;
+}
+.mv-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-image: url(../img/bg_mv.jpg);
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 0 0 0 80px;
+}
+.mv-title{
+    font-size: 2.8rem;
+    margin-bottom: 9px;
+    font-style: italic;
+    line-height: 1;
+}
+.mv-text-bg{
+    background-color: #fff;
+}
+.mv-text-and{
+    color: #EB51C2;
+    font-size: 2.5rem;
+}
+.mv-subtitle{
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.mv-btn a{
+    padding: 20px 25px;
+}
+/* トップ画像のアニメーション */
+.mv-img{
+    animation-name: topAnimeImg;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes topAnimeImg{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+/* タイトルテキストのアニメーション */
+/* 共通 */
+.bgextend{
+    animation-name: bgextendAnimeBase;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: relative;
+    opacity: 0;
+}
+@keyframes bgextendAnimeBase{
+    from{opacity: 0;}
+    to{ opacity: 1;}
+}
+/* 中の要素 */
+.bgappearTrigger{
+    animation-name: bgextendAnimeSecond;
+    animation-duration: 1s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes bgextendAnimeSecond{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/* 左から右 */
+.bgLRextendTrigger::before{
+    animation-name: bgLRextendAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #EB51C2;
+}
+@keyframes bgLRextendAnime{
+    0%{
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    50%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    50.001%{
+        transform-origin: right;
+    }
+    100%{
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+}
+
+/* --------------------INTRO PAGE-------------------- */
+.intro{
+    padding: 0 20px;
+    margin-top: -23px;
+}
+.intro-title{
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #eb51c2;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.intro-subtitle{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+.intro-subtitle span{
+    color: #eb51c2;
+}
+.intro-text{
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+}
+
+/* --------------------ABOUT PAGE-------------------- */
+.about-img-wrap{
+    width: 100%;
+}
+.about-list{
+    display: grid;
+    row-gap: 40px;
+}
+.about-text-wrap{
+    background-color: #fff;
+    padding: 40px 30px 30px 30px;
+    position: relative;
+    margin: -10px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.about-title{
+    color: #eb51c2;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+.about-title.food{
+    color: rgb(4, 168, 4);
+}
+.about-subtitle{
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.about-text{
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.about-btn{
+    text-align: center;
+    margin-top: 30px;
+}
+.about-btn a{
+    padding: 20px 53px;
+}
+/* スクロールエフェクト */
+.fadeUp{
+    opacity: 0;
+    animation-name: fadeUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fadeUpTrigger{
+    opacity: 0;
+}
+
+/* --------------------TRAINER PAGE-------------------- */
+.section-border-top{
+    transform: translateY(1px);
+}
+.section-border-bottom{
+    transform: translateY(-1px);
+}
+.section-inner{
+    padding: 40px 0;
+    background-color: #eb51c2;
+}
+.en-pagetitle{
+    font-size: 2.5rem;
+}
+.ja-pagetitle{
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.white{
+    color: #fff;
+}
+.tab-area{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    margin: 30px 0 40px;
+    cursor: pointer;
+}
+.tab-name{
+    color: #fff;
+    padding-bottom: 10px;
+}
+.person-list{
+    display: grid;
+    row-gap: 15px;
+}
+.person-box{
+    background-color: #fff;
+    border-radius: 10px;
+}
+.person-box__img img{
+    border-radius: 10px 10px 0 0;
+}
+.person-box__text{
+    font-size: 0.9rem;
+    line-height: 1.7;
+    padding: 20px;
+}
+.tab-name.tab-active{
+    position: relative;
+    font-weight: bold;
+}
+.tab-name.tab-active::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+.tab-content{
+    display: none;
+}
+.tab-content.show{
+    display: block;
+}
+
+/* --------------------STUDIO PAGE-------------------- */
+.black span{
+    color: #eb51c2;
+}
+.swiper{
+    margin-top: 40px;
+}
+/* ページネーションの表示設定 */
+.swiper-pagination-bullets{
+    position: static;
+    margin-top: 10px;
+}
+/* ページネーション大きさ、色の設定 */
+.swiper-pagination-bullet{
+    width: 9px;
+    height: 9px;
+    background: #eb51c2 !important;
+}
+/* 進む・戻るボタンの設定 */
+.swiper-button-prev,
+.swiper-button-next{
+    background-color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: #eb51c2;
+}
+.swiper-button-prev{
+    transform: translateX(-61.5%) rotate(270deg);
+}
+.swiper-button-next{
+    transform: translateX(62%) rotate(90deg);
+}
+/* デフォルトの進む・戻るボタンを消す */
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    display: none;
+}
+
+/* --------------------PRICE PAGE-------------------- */
+.price-inner{
+    padding: 40px 0;
+    background-color: #eb51c2;
+}
+.course-body{
+    margin: 0 -30px;
+}
+.course-wrap{
+    position: relative;         /* スクロール案内設置用 */
+    white-space: nowrap;
+    margin-top: 15px;
+    padding-top: 25px;
+    padding-right: 20px;
+    overflow-x: auto;
+}
+.course-box{
+    display: inline-block;      /* 上記の「white-space: nowrap」を適用させる */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-left: 20px;
+    text-align: center;
+    position: relative;         /* オススメ設置用 */
+    width: 320px;
+}
+.course-item{
+    border-bottom: 1px solid rgb(201, 200, 200);
+    padding: 20px 0;
+}
+.course-item:last-child{
+    border-bottom: none;
+}
+.course-title{
+    color: #eb51c2;
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+.course-price{
+    font-size: 3rem;
+}
+.course-price span{
+    display: block;
+    font-size: 1rem;
+}
+.rental-title{
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+.rental-item{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+/* オススメ表示 */
+.good-course{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #eb51c2;
+    background-color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: #eb51c2 2px solid;
+    border-radius: 50px;
+    padding: 8px 0;
+    width: 80%;
+}
+/* スクロール案内表示 */
+.scroll-icon-wrap{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 11px;
+}
+.scroll-icon{
+    display: block;
+    font-size: 42px;
+}
+
+/* --------------------FAQ PAGE-------------------- */
+.faq-box{
+    border-bottom: 1px solid rgb(201, 200, 200);
+}
+.question,.answer{
+    display: flex;
+    column-gap: 15px;
+}
+.question{
+    position: relative;
+    cursor: pointer;
+    padding: 30px 0 15px;
+}
+.answer{
+    margin-bottom: 15px;
+}
+.mark{
+    font-size: 1.75rem;
+    color: #eb51c2;
+    font-weight: bold;
+}
+.q-text{
+    font-weight: normal;
+    padding-top: 5px;
+}
+.a-text{
+    line-height: 1.7;
+}
+.question::after{
+    position: absolute;
+    content: "expand_more";
+    font-family: "Material Icons Round";
+    color: #eb51c2;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+.question.active::after{
+    content: "expand_less";
+}
+
+/* --------------------CTA PAGE-------------------- */
+.cta{
+    margin-top: 30px;
+}
+.cta-body{
+    background-color: #eb51c2;
+    text-align: center;
+    padding: 30px 0 45px;
+}
+.cta-title{
+    font-size: 1.7rem;
+    color: #fff;
+}
+.cta-btn{
+    margin-top: 30px;
+}
+.cta-btn>.btn{
+    background-color: #fff;
+    color: #eb51c2;
+    font-size: 0.9rem;
+    padding: 18px 65px;
+}
+
+/* --------------------FOOTER PAGE-------------------- */
+.footer{
+    display: grid;
+    background-color: black;
+    padding: 50px 20px;
+    place-items: center;
+}
+/* トップページへ戻るボタン */
+.page-top {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+  }
+  .page-top__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    color: #eb51c2;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .page-top__icon {
+    font-size: 27px;
+  }
+  .page-top__link:hover {
+    opacity: 0.8;
+  }
+
+
+/* media Queries 600px以上 タブレット用 
+---------------------------------------------------------------*/
+@media screen and (min-width:600px){
+    .br-text{
+        display: none;
+    }
+
+    /* --------------------TOP PAGE-------------------- */
+    /* メインビジュアル */
+    .mv{
+        height: 535px;
+    }
+    .mv-title{
+        font-size: 4rem;
+    }
+    .mv-text-bg{
+        margin-bottom: 0;
+    }
+    .mv-text-and{
+        font-size: 3.7rem;
+    }
+    .mv-subtitle{
+        font-size: 1.45rem;
+    }
+
+    /* --------------------INTRO PAGE-------------------- */
+    .intro-text{
+        text-align: center;
+    }
+
+    /* --------------------TRAINER PAGE-------------------- */
+    .person-list{
+        grid-template-columns: repeat(3,1fr);
+        row-gap: 0;
+        column-gap: 15px;
+    }
+
+    /* --------------------FAQ PAGE-------------------- */
+    .question{
+        padding: 20px 0 15px;
+    }
+    .answer{
+        margin-bottom: 15px;
+    }
+    .mark{
+        font-size: 1.75rem;
+        color: #eb51c2;
+        font-weight: bold;
+    }
+    .q-text{
+        font-weight: normal;
+        padding-top: 5px;
+    }
+}
+
+
+/* media Queries 1025px以上 PC用 
+---------------------------------------------------------------*/
+@media screen and (min-width:1025px){
+    .en-pagetitle{
+        font-size: 3.7rem;
+    }
+    .ja-pagetitle{
+        font-size: 1.3rem;
+    }
+    .btn{
+        transition: .5s;
+    }
+    .btn:hover{
+        opacity: 0.8;
+    }
+    /* --------------------TOP PAGE-------------------- */
+    .header{
+        height: 80px;
+        padding: 0 30px;
+    }
+    .header-btn{
+        padding: 15px 20px;
+    }
+    .header-logo{
+       height: 25px;
+    }
+    .btn{
+        font-size: 1rem;
+    }
+    /* メインビジュアル */
+    .mv{
+        height: 700px;
+        padding-top: 250px;
+        padding-left: 140px;
+    }
+    .mv-title{
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+    .mv-text-and{
+        font-size: 4.7rem;
+    }
+    .mv-subtitle{
+        font-size: 1.7rem;
+    }
+    .mv-btn{
+        margin-top: 60px;
+    }
+    .mv-btn a{
+        font-size: 1.3rem;
+        padding: 27px 52px;
+    }
+    
+    /* --------------------INTRO PAGE-------------------- */
+    .intro{
+        margin-top: -35px;
+    }
+    .intro-title{
+        font-size: 7rem;
+        line-height: 1;
+        letter-spacing: 1.5px;
+    }
+    .intro-subtitle{
+        font-size: 2rem;
+        margin-top: 15px;
+    }
+    .intro-text{
+        line-height: 2;
+        margin-bottom: 10px;
+    }
+
+    /* --------------------ABOUT PAGE-------------------- */
+    .about-body{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    .about-list{
+        row-gap: 100px;
+    }
+    .about-box{
+        position: relative;
+    }
+    .about-img-wrap{
+        width: 70%;
+    }
+    .about-text-wrap{
+        position: absolute;
+        right: 20px;
+        bottom: -20px;
+        margin: 0;
+        width: 555px;
+        padding: 60px;
+    }
+    .about-box__reverse{
+        display: flex;
+        justify-content: right;
+    }
+    .about-box__reverse .about-text-wrap{
+        left: 20px;
+    }
+    .about-title{
+        font-size: 1.5rem;
+    }
+    .about-subtitle{
+        font-size: 1.9rem;
+    }
+    .about-text{
+        line-height: 1.7;
+    }
+    .about-btn{
+        margin-top: 10px;
+    }
+    .about-btn a{
+        padding: 30px 50px;
+        font-size: 1.3rem;
+    }
+
+    /* --------------------STUDIO PAGE-------------------- */
+    /* 進む・戻るボタンの設定 */
+    .swiper-button-prev,
+    .swiper-button-next{
+        width: 62px;
+        height: 62px;
+    }
+    .swiper-button-prev{
+        transform: translateX(-65%) rotate(270deg);
+    }
+    .swiper-button-next{
+        transform: translateX(65%) rotate(90deg);
+    }
+    .swiper-button-prev>.page-top__icon,
+    .swiper-button-next>.page-top__icon{
+        font-size: 2.1rem;
+        margin-top: 8px;
+    }
+
+    /* --------------------PRICE PAGE-------------------- */
+    /* 横スクロールを無くす */
+    .course-wrap{
+        overflow-x: visible;
+    }
+    /* スクロール案内を消す */
+    .scroll-icon-wrap{
+       display: none;
+    }
+    .course-box{
+        margin-left: 20px;
+        width: 31%;
+    }
+
+    /* --------------------CTA PAGE-------------------- */
+    .cta{
+        margin-top: 50px;
+    }
+    .cta-body{
+        padding: 45px 0 75px;
+    }
+    .cta-title{
+        font-size: 4rem;
+    }
+    .cta-btn{
+        margin-top: 50px;
+    }
+    .cta-btn>.btn{
+        font-size: 1.25rem;
+        padding: 25px 60px;
+    }
+
+    /* --------------------FOOTER PAGE-------------------- */
+    .footer-img{
+        height: 25px;
+    }
+    .footer{
+        padding: 110px 20px;
+    }
+    /* トップページへ戻るボタン */
+    .page-top {
+        display: none;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1;
+    }
+    .page-top__link {
+        width: 85px;
+        height: 85px;
+    }
+    .page-top__link>.page-top__icon {
+        font-size: 50px;
+    }
+}
