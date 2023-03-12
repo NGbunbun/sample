@@ -402,24 +402,25 @@ img {
 .course-title{
     color: #eb51c2;
     font-weight: bold;
-    font-size: 1.7rem;
-    letter-spacing: 5px;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
     margin-bottom: 15px;
 }
 .course-price{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 .course-price span{
     display: block;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 .rental-title{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 5px 0;
 }
 .rental-item{
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 0.8rem;
 }
 /* オススメ表示 */
 .good-course{
@@ -461,6 +462,7 @@ img {
 .question,.answer{
     display: flex;
     column-gap: 15px;
+    font-size: 0.8rem;
 }
 .question{
     position: relative;
@@ -471,7 +473,7 @@ img {
     margin-bottom: 15px;
 }
 .mark{
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     color: #eb51c2;
     font-weight: bold;
 }
@@ -490,7 +492,7 @@ img {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .question.active::after{
     content: "expand_less";
@@ -617,10 +619,10 @@ img {
 ---------------------------------------------------------------*/
 @media screen and (min-width:1025px){
     .en-pagetitle{
-        font-size: 3.7rem;
+        font-size: 3.5rem;
     }
     .ja-pagetitle{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .btn{
         transition: .5s;
@@ -637,10 +639,10 @@ img {
         padding: 15px 20px;
     }
     .header-logo{
-       height: 25px;
+       height: 23px;
     }
     .btn{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     /* メインビジュアル */
     .mv{
@@ -662,7 +664,7 @@ img {
         margin-top: 60px;
     }
     .mv-btn a{
-        font-size: 1.3rem;
+        font-size: 1rem;
         padding: 27px 52px;
     }
     
@@ -728,7 +730,7 @@ img {
     }
     .about-btn a{
         padding: 30px 50px;
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     /* --------------------STUDIO PAGE-------------------- */
@@ -772,19 +774,19 @@ img {
         padding: 45px 0 75px;
     }
     .cta-title{
-        font-size: 4rem;
+        font-size: 3.1rem;
     }
     .cta-btn{
         margin-top: 50px;
     }
     .cta-btn>.btn{
-        font-size: 1.25rem;
-        padding: 25px 60px;
+        font-size: 1rem;
+        padding: 27px 55px;
     }
 
     /* --------------------FOOTER PAGE-------------------- */
     .footer-img{
-        height: 25px;
+        height: 23px;
     }
     .footer{
         padding: 110px 20px;
